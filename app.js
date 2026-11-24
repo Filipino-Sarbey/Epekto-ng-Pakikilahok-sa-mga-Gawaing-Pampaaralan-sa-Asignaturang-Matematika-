@@ -1,7 +1,7 @@
 
 // Add your Supabase project URL and anon key from Project Settings > API.
 const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+const SUPABASE_ANON_KEY = "sb_publishable_m7YpdXdSiY49Qez-fNJZIA_uKUemIqQ";
 const supabaseReady = SUPABASE_URL.startsWith("https://") &&
   !SUPABASE_URL.includes("YOUR_") && !SUPABASE_ANON_KEY.includes("YOUR_");
 const db = supabaseReady && window.supabase
