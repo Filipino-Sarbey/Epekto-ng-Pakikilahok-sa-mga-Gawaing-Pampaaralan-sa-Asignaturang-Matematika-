@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Sarbey | Gawaing Pampaaralan sa Matematika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">M</span><span>MATEMATIKA <small>Sarbey</small></span></div>
+      <div class="top-note"><span class="status-dot"></span> Sarbey</div>
+    </header>
+
+    <section class="survey-card" aria-live="polite">
+      <div class="progress-wrap" id="progressWrap" hidden>
+        <div class="progress-meta"><span id="sectionLabel">MULTIPLE CHOICE</span><span id="progressText">1 / 10</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <div id="screen" class="screen"></div>
+    </section>
+    <footer class="footer"><span>Isang akademikong sarbey</span><span>Salamat sa iyong oras.</span></footer>
+  </main>
+
+  <!-- The small invisible hotspot is intentionally limited to the intro screen. -->
+  <button id="adminHotspot" class="admin-hotspot" aria-label="Administrator access" title="Administrator access"></button>
+
+  <dialog id="adminDialog" class="modal">
+    <form method="dialog" class="modal-close-form"><button class="icon-close" aria-label="Isara">×</button></form>
+    <div id="adminLogin">
+      <p class="eyebrow">RESTRICTED AREA</p><h2>Administrator access</h2>
+      <p class="muted">Ilagay ang administrator passcode upang makita ang mga tugon.</p>
+      <label class="field-label" for="adminPasscode">Passcode</label>
+      <input id="adminPasscode" class="text-input" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Ilagay ang passcode">
+      <p id="adminError" class="error-message" role="alert"></p>
+      <button id="adminLoginBtn" class="primary-btn full-btn" type="button">Buksan ang dashboard <span>→</span></button>
+    </div>
+    <div id="adminDashboard" hidden>
+      <div class="admin-heading"><div><p class="eyebrow">RESPONDENT RECORDS</p><h2>Mga Tugon</h2></div><button id="refreshAdmin" class="secondary-btn" type="button">I-refresh ↻</button></div>
+      <p id="adminCount" class="muted"></p>
+      <div id="responsesList" class="responses-list"></div>
+      <button id="exportCsv" class="secondary-btn full-btn" type="button">I-export bilang CSV ↓</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
